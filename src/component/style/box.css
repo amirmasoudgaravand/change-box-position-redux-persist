@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body {
+    background: #2c2015;
+    overflow-x: hidden;
+
+}
+
+header {
+    background: linear-gradient(180deg, rgb(1 1 3) 14%, rgba(87, 89, 89, .01) 66%);
+    height: 111px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 52px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.grid-container {
+    display: grid;
+    margin: 1px auto;
+    width: 700px;
+}
+
+.area {
+    width: 93%;
+    border-radius: 12px;
+    margin: 8px auto;
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #5a3e13;
+    border-radius: 3px;
+    padding: 6px;
+    color: white;
+}
+
+.box label {
+    display: block;
+}
+
+.box img {
+    width: 17px;
+    margin-top: 4px;
+    margin-left: 2px;
+}
+
+.box div {
+    position: absolute;
+    bottom: 0;
+    background: #403412;
+    border-radius: 31px;
+    padding: 4px;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.box span {
+    display: inline-block;
+    background: #403412;
+    border-radius: 11px;
+    width: 22px;
+    height: 26px;
+    cursor: pointer;
+}
+
+footer {
+    background: linear-gradient(0deg, rgb(1 1 3) 14%, rgba(87, 89, 89, .01) 66%);
+    height: 111px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 52px;
+    font-family: 'Dancing Script', cursive;
+    align-items: center;
+}
+
+.btn-add-box {
+    background: url(../../../public/icons/plus.svg);
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border: none;
+    position: absolute;
+    bottom: 4px;
+    cursor: pointer;
+}
+
+.cursor-not-allowed {
+    cursor: not-allowed;
+}
