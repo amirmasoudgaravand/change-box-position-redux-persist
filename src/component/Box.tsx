@@ -30,14 +30,21 @@ function Box() {
         <Fragment>
             <header>UniClient</header>
             <div data-test="grid-container" className="grid-container" style={{
-                gridTemplateColumns: 'auto auto auto'}}>
+                gridTemplateColumns: `${box !== null && box.length > 2
+                    ? 'auto auto auto'
+                    : box !== null && box.length === 1
+                        ? 'auto'
+                        : box !== null && box.length === 2
+                            ? 'auto auto'
+                            : ""} `
+            }}>
                 {
                     // show all boeses
                     box !== null && box.map((item: any) => {
                         return (
                             <div data-test="areas" className="areas" id={`index${item}`} key={item}>
                                 <div className="area" data-test="area" draggable="true"
-                                    style={{ height: '150px' }}
+                                     style={{ height: `${box !== null && box.length > 6 ? '75px' : '150px'} ` }}
                                     id={`area_${item}`}>
                                     <div className="box" >
                                         <span className="delete" onClick={() => { filterBox(item) }} id={`box_${item}`}  >
