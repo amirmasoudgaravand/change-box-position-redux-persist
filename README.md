@@ -1,3 +1,11 @@
+This project is Developed React.js,Typescrip,Redux and Redux Persist.
+In the Box.tsx component, you can add one box at a time with up to addBox(),
+and remove box with filterBox() function,
+with the dragEnd() function,you can drag and drop.
+
+Every Time you drag and drop, we need to change the order of box array based on drag and drop so,
+that when the page is refreshed, the user can see the latest changes.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
