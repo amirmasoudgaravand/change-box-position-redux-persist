@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ReduxStoreModel } from "../models/state-management/reduxStore.model";
 import { REDUX_ACTIONS } from "../state-management/reduxAction.enum";
 import "./style/box.css";
+
 function Box() {
     const dispatch = useDispatch();
     // get data from store
@@ -10,23 +11,25 @@ function Box() {
     const [itemMove, setItemMove] = useState<boolean>(false);
     const [oneItem, setOneItem] = useState<number>();
     const [twoItem, setTwoItem] = useState<number>();
+    
     // delete box
     const filterBox = function filterBox(val: any) {
         let filterBox = box.filter((number: number) => number !== val);
         dispatch({ type: REDUX_ACTIONS.DELETE_BOX, payload: filterBox });
     }
+    
     // add new box 
     const addBox = function () {
         let boxValue;
-        if (box !==null && box.length === 0) {
+        if (box === null || box.length === 0) {
             boxValue = 1;
+            dispatch({ type: REDUX_ACTIONS.ADD_BOX, payload: [boxValue] });
         } else {
             // find max value from arry and create new box with max value
             let maxValue = Math.max(...box);
             boxValue = maxValue + 1;
-        
+            dispatch({ type: REDUX_ACTIONS.ADD_BOX, payload: [...box, boxValue] });
         }
-        dispatch({ type: REDUX_ACTIONS.ADD_BOX, payload: [...box, boxValue] });
     }
 
     useEffect(() => {
@@ -66,8 +69,8 @@ function Box() {
             }
         }
     }
-
     document.addEventListener("dragend", dragEnd);
+    
     return (
         <Fragment>
             <header>UniClient</header>
